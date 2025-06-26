@@ -1,6 +1,6 @@
 {
     "name":"OpenVRCTools VPM",
-    "id":"games.chatfrog.openvrctools-vpm",
+    "id":"org.openvrctools.vpm",
     "url":"https://openvrctools.github.io/vpmrepo/index.json",
     "author":{
         "email":"laura@chatfrog.games",

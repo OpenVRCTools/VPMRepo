@@ -101,16 +101,10 @@ const setTheme = () => {
     }, 1000);
   });
 
-  const downloadListener = () => {
-    window.open(e?.target?.dataset?.packageUrl, '_blank');
-  }
-
   const rowMoreMenu = document.getElementById('rowMoreMenu');
   const hideRowMoreMenu = e => {
     if (rowMoreMenu.contains(e.target)) return;
     document.removeEventListener('click', hideRowMoreMenu);
-    const downloadLink = rowMoreMenu.querySelector('#rowMoreMenuDownload');
-    downloadLink.removeEventListener('click', downloadListener);
     rowMoreMenu.hidden = true;
   }
 
@@ -123,6 +117,10 @@ const setTheme = () => {
         rowMoreMenu.hidden = false;
 
         const downloadLink = rowMoreMenu.querySelector('#rowMoreMenuDownload');
+        const downloadListener = () => {
+          window.open(e?.target?.dataset?.packageUrl, '_blank');
+          downloadLink.removeEventListener('click', downloadListener);
+        }
         downloadLink.addEventListener('click', downloadListener);
 
         setTimeout(() => {

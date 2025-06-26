@@ -108,6 +108,10 @@ const setTheme = () => {
     rowMoreMenu.hidden = true;
   }
 
+  const downloadListener = () => {
+    window.open(e?.target?.dataset?.packageUrl, '_blank');
+  }
+
   const rowMenuButtons = document.querySelectorAll('.rowMenuButton');
   rowMenuButtons.forEach(button => {
     button.addEventListener('click', e => {
@@ -117,9 +121,8 @@ const setTheme = () => {
         rowMoreMenu.hidden = false;
 
         const downloadLink = rowMoreMenu.querySelector('#rowMoreMenuDownload');
-        downloadLink.addEventListener('click', () => {
-          window.open(e?.target?.dataset?.packageUrl, '_blank');
-        });
+        downloadLink.removeEventListener('click', downloadListener);
+        downloadLink.addEventListener('click', downloadListener);
 
         setTimeout(() => {
           document.addEventListener('click', hideRowMoreMenu);

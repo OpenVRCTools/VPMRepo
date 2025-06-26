@@ -14,7 +14,11 @@
     },
     "bannerUrl":"ovt_banner.png",
     "githubRepos":[
+        "OpenVRCTools/BlendtreeBuilder",
         "OpenVRCTools/ControllerCleaner",
-        "OpenVRCTools/HierarchyPlus"
+        "OpenVRCTools/HierarchyPlus",
+        "OpenVRCTools/LimbControl",
+        "OpenVRCTools/SelectionHelper",
+        "OpenVRCTools/VrcSdkPlus"
     ]
 }

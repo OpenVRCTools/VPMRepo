@@ -108,6 +108,11 @@ const setTheme = () => {
     rowMoreMenu.hidden = true;
   }
 
+  const downloadLink = rowMoreMenu.querySelector('#rowMoreMenuDownload');
+  downloadLink.addEventListener('click', e => {
+    window.open(e.target.dataset.packageUrl, '_blank');
+  });
+
   const rowMenuButtons = document.querySelectorAll('.rowMenuButton');
   rowMenuButtons.forEach(button => {
     button.addEventListener('click', e => {
@@ -116,12 +121,7 @@ const setTheme = () => {
         rowMoreMenu.style.left = `${e.clientX - 120}px`;
         rowMoreMenu.hidden = false;
 
-        const downloadLink = rowMoreMenu.querySelector('#rowMoreMenuDownload');
-        const downloadListener = function () {
-          window.open(e?.target?.dataset?.packageUrl, '_blank');
-          downloadLink.removeEventListener('click', this);
-        }
-        downloadLink.addEventListener('click', downloadListener);
+        downloadLink.dataset.packageUrl = e?.target?.dataset?.packageUrl;
 
         setTimeout(() => {
           document.addEventListener('click', hideRowMoreMenu);

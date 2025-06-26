@@ -12,7 +12,7 @@
         "url":"https://github.com/OpenVRCTools/VPMRepo/",
         "text":"View on GitHub"
     },
-    "bannerUrl":"banner.png",
+    "bannerUrl":"ovt_banner.png",
     "githubRepos":[
         "OpenVRCTools/ControllerCleaner",
         "OpenVRCTools/HierarchyPlus"

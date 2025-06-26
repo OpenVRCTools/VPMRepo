@@ -117,11 +117,9 @@ const setTheme = () => {
         rowMoreMenu.hidden = false;
 
         const downloadLink = rowMoreMenu.querySelector('#rowMoreMenuDownload');
-        const downloadListener = () => {
+        downloadLink.addEventListener('click', () => {
           window.open(e?.target?.dataset?.packageUrl, '_blank');
-          downloadLink.removeEventListener('change', downloadListener);
-        }
-        downloadLink.addEventListener('change', downloadListener);
+        });
 
         setTimeout(() => {
           document.addEventListener('click', hideRowMoreMenu);

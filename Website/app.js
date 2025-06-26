@@ -109,8 +109,8 @@ const setTheme = () => {
   }
 
   const downloadLink = rowMoreMenu.querySelector('#rowMoreMenuDownload');
-  downloadLink.addEventListener('click', e => {
-    window.open(e.target.dataset.packageUrl, '_blank');
+  downloadLink.addEventListener('click', () => {
+    window.open(downloadLink.dataset.packageUrl, '_blank');
   });
 
   const rowMenuButtons = document.querySelectorAll('.rowMenuButton');

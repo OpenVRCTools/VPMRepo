@@ -119,11 +119,9 @@ const setTheme = () => {
         const downloadLink = rowMoreMenu.querySelector('#rowMoreMenuDownload');
         const downloadListener = () => {
           window.open(e?.target?.dataset?.packageUrl, '_blank');
-        }
-        downloadLink.addEventListener('change', () => {
-          downloadListener();
           downloadLink.removeEventListener('change', downloadListener);
-        });
+        }
+        downloadLink.addEventListener('change', downloadListener);
 
         setTimeout(() => {
           document.addEventListener('click', hideRowMoreMenu);

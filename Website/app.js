@@ -117,9 +117,9 @@ const setTheme = () => {
         rowMoreMenu.hidden = false;
 
         const downloadLink = rowMoreMenu.querySelector('#rowMoreMenuDownload');
-        const downloadListener = () => {
+        const downloadListener = function () {
           window.open(e?.target?.dataset?.packageUrl, '_blank');
-          downloadLink.removeEventListener('click', downloadListener);
+          downloadLink.removeEventListener('click', this);
         }
         downloadLink.addEventListener('click', downloadListener);
 
